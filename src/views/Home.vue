@@ -20,10 +20,6 @@ import { RouterLink } from "vue-router";
 </script>
 
 <style lang="scss" scoped>
-main {
-  height: 100%;
-}
-
 .btn {
   margin-top: 5rem;
   width: 50%;

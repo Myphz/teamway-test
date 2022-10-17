@@ -20,6 +20,10 @@ body {
   padding: 10vh 10vw;
 }
 
+main {
+  height: 100%;
+}
+
 @for $i from 1 through length($font-sizes) {
   h#{$i},
   .h#{$i} {
