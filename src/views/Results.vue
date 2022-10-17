@@ -16,6 +16,7 @@
 import { useRouter } from "vue-router";
 
 const { result } = history.state;
+// Go back to home if there is no result (i.e, if the user has typed /results manually)
 if (!result) useRouter().replace("/");
 
 const isExtrovert = result === "EXTROVERT";
@@ -25,6 +26,11 @@ const quotes = [
     "You're rarely bored alone.",
     "People empty you. You have to get away to refill.",
     "You're uncomfortable with loud places and confrontations.",
+  ],
+  [
+    "You enjoy being at the center of attention.",
+    "You feel isolated by too much time spent alone.",
+    "You tends to act first before thinking.",
   ],
 ][+isExtrovert];
 </script>
