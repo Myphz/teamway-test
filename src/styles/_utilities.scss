@@ -1,0 +1,51 @@
+@use "./variables" as *;
+
+html {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  font-family: $font;
+  font-size: nth($font-sizes, 4);
+  color: $font-color-primary;
+  background-image: $bg;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#app {
+  min-height: 100%;
+}
+
+@for $i from 1 through length($font-sizes) {
+  h#{$i},
+  .h#{$i} {
+    font-size: nth($font-sizes, $i);
+    font-weight: normal;
+    color: $font-color-focus;
+  }
+}
+
+// Flexbox
+.align-center {
+  display: flex;
+  align-items: center;
+}
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+.space-around {
+  display: flex;
+  justify-content: space-around;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
