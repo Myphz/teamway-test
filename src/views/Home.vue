@@ -8,12 +8,15 @@
       <div>Discover your personality traits</div>
       <div>Find out your attitude and characteristics</div>
     </div>
-    <Button class="btn">Start the test</Button>
+    <router-link to="/test" class="btn">
+      <Button>Start the test</Button>
+    </router-link>
   </main>
 </template>
 
 <script setup lang="ts">
 import Button from "@/components/Button.vue";
+import { RouterLink } from "vue-router";
 </script>
 
 <style lang="scss" scoped>
@@ -24,5 +27,9 @@ main {
 .btn {
   margin-top: 5rem;
   width: 50%;
+
+  button {
+    width: 100%;
+  }
 }
 </style>
