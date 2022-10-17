@@ -16,7 +16,7 @@ body {
 }
 
 #app {
-  min-height: 100vh;
+  height: 100vh;
 }
 
 @for $i from 1 through length($font-sizes) {
@@ -48,4 +48,13 @@ body {
 .flex-column {
   display: flex;
   flex-direction: column;
+}
+
+// Text
+.font-fancy {
+  font-family: $font-fancy;
+}
+
+.text-center {
+  text-align: center;
 }
