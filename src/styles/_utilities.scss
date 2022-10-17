@@ -17,6 +17,7 @@ body {
 
 #app {
   height: 100vh;
+  padding: 10vh 10vw;
 }
 
 @for $i from 1 through length($font-sizes) {
@@ -57,4 +58,9 @@ body {
 
 .text-center {
   text-align: center;
+}
+
+// Other
+.transition {
+  transition: all 0.25s ease;
 }

@@ -1,12 +1,14 @@
 <template>
-  <main class="flex-column justify-center align-center">
-    <h3>Welcome to</h3>
-    <h1 class="font-fancy">Persona</h1>
+  <main class="flex-column align-center space-between">
+    <div class="text-center">
+      <h3>Welcome to</h3>
+      <h1 class="font-fancy">Persona</h1>
+    </div>
     <div class="h4 text-center">
       <div>Discover your personality traits</div>
       <div>Find out your attitude and characteristics</div>
     </div>
-    <Button>test</Button>
+    <Button class="btn">Start the test</Button>
   </main>
 </template>
 
@@ -24,7 +26,8 @@ main {
   height: 100%;
 }
 
-h1 {
-  margin-bottom: 4em;
+.btn {
+  margin-top: 5rem;
+  width: 50%;
 }
 </style>
