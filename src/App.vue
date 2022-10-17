@@ -6,14 +6,17 @@
       <div>Discover your personality traits</div>
       <div>Find out your attitude and characteristics</div>
     </div>
+    <Button>test</Button>
   </main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Button from "./components/Button.vue";
+</script>
 
 <style lang="scss">
-@use "./styles/reset" as *;
-@use "./styles/utilities" as *;
+@use "@styles/reset" as *;
+@use "@styles/utilities" as *;
 </style>
 
 <style lang="scss" scoped>
