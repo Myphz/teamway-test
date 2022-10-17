@@ -1,10 +1,8 @@
 <template>
-  <h1>Welcome to persona!</h1>
+  <router-view />
 </template>
 
-<script setup lang="ts"></script>
-
 <style lang="scss">
-@use "./styles/reset" as *;
-@use "./styles/utilities" as *;
+@use "@styles/reset" as *;
+@use "@styles/utilities" as *;
 </style>
