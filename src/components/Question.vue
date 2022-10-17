@@ -1,15 +1,35 @@
 <template>
   <h3 class="text-center font-fancy">
-    You’re really busy at work and a colleague is telling you their life story
-    and personal woes. You:
+    {{ question }}
   </h3>
   <ol>
-    <li>Don't dare to interrupt them</li>
-    <li>Don't dare to interrupt them</li>
-    <li>Don't dare to interrupt them</li>
-    <li>Don't dare to interrupt them</li>
+    <li
+      v-for="answer in shuffleArray(answers)"
+      @click="() => next(points[answer])"
+    >
+      {{ answer }}
+    </li>
   </ol>
 </template>
+
+<script lang="ts" setup>
+import shuffleArray from "@/helpers/shuffle";
+
+type Props = {
+  question: string;
+  answers: string[];
+  next: (score: number) => undefined;
+};
+
+const { question, answers, next } = defineProps<Props>();
+
+// Convert answers array to object whose keys are the indexes and the values are the array values
+// e.g: ["yes", "no", "maybe"] => { "yes": 0, "no": 1, "maybe": 2 }
+const points = answers.reduce(
+  (acc, answer, i) => ({ [answer]: i, ...acc }),
+  {}
+) as Record<string, number>;
+</script>
 
 <style lang="scss" scoped>
 @use "@styles/variables" as *;
