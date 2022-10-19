@@ -1,6 +1,11 @@
 <template>
   <Layout>
-    <router-view />
+    <Suspense>
+      <router-view />
+      <template #fallback>
+        <h1>Loading...</h1>
+      </template>
+    </Suspense>
   </Layout>
 </template>
 

@@ -6,18 +6,24 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "npx tsc --project ./server/tsconfig.json && node ./server/index.js"
   },
   "dependencies": {
+    "connect-history-api-fallback": "^2.0.0",
+    "express": "^4.18.2",
+    "mongodb-memory-server": "^8.9.3",
     "vue": "^3.2.37",
     "vue-router": "^4.1.5"
   },
   "devDependencies": {
+    "@types/connect-history-api-fallback": "^1.3.5",
+    "@types/express": "^4.17.14",
     "@types/node": "^18.11.0",
     "@vitejs/plugin-vue": "^3.1.0",
     "prettier": "2.7.1",
     "sass": "^1.55.0",
-    "typescript": "^4.6.4",
+    "typescript": "^4.8.4",
     "vite": "^3.1.0",
     "vue-tsc": "^0.40.4"
   }
