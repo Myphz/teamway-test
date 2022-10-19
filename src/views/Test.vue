@@ -15,7 +15,17 @@ import shuffleArray from "@/helpers/shuffle";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
-const data = await fetchServer("questions");
+type Question = {
+  question: string;
+  answers: string[];
+};
+
+type Result = {
+  result: string;
+  quotes: string[];
+};
+
+const data: Question[] = await fetchServer("questions");
 
 shuffleArray(data);
 
@@ -23,16 +33,15 @@ let totalScore = 0;
 const questionIndex = ref(0);
 const router = useRouter();
 
-const next = (score: number) => {
+const next = async (score: number) => {
   totalScore += score;
   if (questionIndex.value === data.length - 1) {
-    // TODO: Replace with backend call
-    const result = totalScore > 10 ? "EXTROVERT" : "INTROVERT";
+    const { result, quotes }: Result = await fetchServer("results", {
+      score: totalScore,
+    });
     // Pass the result as history state
-    router.push({ name: "results", state: { result } });
-    return undefined;
+    return router.push({ name: "results", state: { result, quotes } });
   }
   questionIndex.value++;
-  return undefined;
 };
 </script>

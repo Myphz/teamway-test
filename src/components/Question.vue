@@ -3,10 +3,7 @@
     {{ question }}
   </h3>
   <ol>
-    <li
-      v-for="answer in shuffleArray(answers)"
-      @click="() => next(points[answer])"
-    >
+    <li v-for="answer in shuffleArray(answers)" @click="() => loadNext(answer)">
       {{ answer }}
     </li>
   </ol>
@@ -18,7 +15,12 @@ import shuffleArray from "@/helpers/shuffle";
 type Props = {
   question: string;
   answers: string[];
-  next: (score: number) => undefined;
+  next: (score: number) => any;
+};
+
+const loadNext = (answer: string) => {
+  next(points[answer]);
+  return undefined;
 };
 
 const { question, answers, next } = defineProps<Props>();
