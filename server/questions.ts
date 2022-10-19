@@ -23,10 +23,10 @@ export const QUESTIONS = [
     question:
       "You’re having an animated discussion with a colleague regarding a project that you’re in charge of. You:",
     answers: [
-      "Don’t dare contradict them",
       "Think that they are obviously right",
-      "Defend your own point of view, tooth and nail",
+      "Don’t dare contradict them",
       "Continuously interrupt your colleague",
+      "Defend your own point of view, tooth and nail",
     ],
   },
   {
@@ -43,9 +43,9 @@ export const QUESTIONS = [
       "During dinner parties at your home, you have a hard time with people who:",
     answers: [
       "Ask you to tell a story in front of everyone else",
-      "Talk privately between themselves",
       "Hang around you all evening",
       "Always drag the conversation back to themselves",
+      "Talk privately between themselves",
     ],
   },
 ];
