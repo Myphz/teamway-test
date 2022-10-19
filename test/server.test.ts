@@ -21,7 +21,7 @@ describe("Server", function () {
 
   describe("POST /results", () => {
     it("should return INTROVERT", async () => {
-      const score = 6;
+      const score = 7;
 
       const res = await req.post("/results").send({ score }).expect(200);
       const { result, quotes } = res.body;
@@ -31,7 +31,7 @@ describe("Server", function () {
     });
 
     it("should return EXTROVERT", async () => {
-      const score = 7;
+      const score = 8;
 
       const res = await req.post("/results").send({ score }).expect(200);
       const { result, quotes } = res.body;

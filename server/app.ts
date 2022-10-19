@@ -26,8 +26,7 @@ app.post("/results", (req, res) => {
   // Total possible score (100% extrovert)
   const totalScore = QUESTIONS.length * (QUESTIONS[0].answers.length - 1);
   // Extrovert if score >= 50%
-  const result =
-    score >= Math.floor(totalScore / 2) ? "EXTROVERT" : "INTROVERT";
+  const result = score > Math.floor(totalScore / 2) ? "EXTROVERT" : "INTROVERT";
 
   res.json({ result, quotes: QUOTES[result] });
 });
