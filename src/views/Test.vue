@@ -14,6 +14,7 @@ import shuffleArray from "@/helpers/shuffle";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
+// TODO: Replace with backend call
 const data = [
   {
     question:
@@ -75,7 +76,10 @@ const router = useRouter();
 const next = (score: number) => {
   totalScore += score;
   if (questionIndex.value === data.length - 1) {
-    router.push("/results");
+    // TODO: Replace with backend call
+    const result = totalScore > 10 ? "EXTROVERT" : "INTROVERT";
+    // Pass the result as history state
+    router.push({ name: "results", state: { result } });
     return undefined;
   }
   questionIndex.value++;
