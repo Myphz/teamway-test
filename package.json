@@ -8,7 +8,7 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "start": "ts-node-esm --transpile-only ./server/index.ts",
-    "test": "mocha -r ts-node/esm test/*.test.ts"
+    "test": "mocha --exit -r ts-node/esm test/*.test.ts"
   },
   "dependencies": {
     "connect-history-api-fallback": "^2.0.0",
