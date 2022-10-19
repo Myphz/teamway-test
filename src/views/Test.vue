@@ -1,6 +1,6 @@
 <template>
   <main class="flex-column justify-center">
-    <Question
+    <QuestionView
       :answers="data[questionIndex].answers"
       :question="data[questionIndex].question"
       :next="next"
@@ -9,25 +9,14 @@
 </template>
 
 <script lang="ts" setup>
-import Question from "@/components/Question.vue";
+import QuestionView from "@/components/Question.vue";
 import fetchServer from "@/helpers/fetch";
 import shuffleArray from "@/helpers/shuffle";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import type { Question, Result } from "@/types";
 
-type Question = {
-  question: string;
-  answers: string[];
-};
-
-type Result = {
-  result: string;
-  quotes: string[];
-};
-
-const data: Question[] = await fetchServer("questions");
-
-shuffleArray(data);
+const data: Question[] = shuffleArray(await fetchServer("questions"));
 
 let totalScore = 0;
 const questionIndex = ref(0);

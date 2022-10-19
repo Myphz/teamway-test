@@ -1,10 +1,11 @@
 export default function shuffleArray(array: any[]) {
-  for (let i = array.length - 1; i > 0; i--) {
+  const arrayCopy = array.slice();
+  for (let i = arrayCopy.length - 1; i > 0; i--) {
     const randomIndex = Math.floor(Math.random() * (i + 1));
-    const temp = array[i];
-    array[i] = array[randomIndex];
-    array[randomIndex] = temp;
+    const temp = arrayCopy[i];
+    arrayCopy[i] = arrayCopy[randomIndex];
+    arrayCopy[randomIndex] = temp;
   }
 
-  return array;
+  return arrayCopy;
 }

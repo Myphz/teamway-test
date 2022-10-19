@@ -11,6 +11,7 @@
 
 <script lang="ts" setup>
 import shuffleArray from "@/helpers/shuffle";
+import { computed, ComputedRef, toRefs } from "vue";
 
 type Props = {
   question: string;
@@ -19,18 +20,19 @@ type Props = {
 };
 
 const loadNext = (answer: string) => {
-  next(points[answer]);
+  next(points.value[answer]);
   return undefined;
 };
 
-const { question, answers, next } = defineProps<Props>();
+const props = defineProps<Props>();
+const { next } = props;
+const { question, answers } = toRefs(props);
 
 // Convert answers array to object whose keys are the indexes and the values are the array values
 // e.g: ["yes", "no", "maybe"] => { "yes": 0, "no": 1, "maybe": 2 }
-const points = answers.reduce(
-  (acc, answer, i) => ({ [answer]: i, ...acc }),
-  {}
-) as Record<string, number>;
+const points = computed(() =>
+  answers.value.reduce((acc, answer, i) => ({ [answer]: i, ...acc }), {})
+) as ComputedRef<Record<string, number>>;
 </script>
 
 <style lang="scss" scoped>

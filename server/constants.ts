@@ -49,3 +49,16 @@ export const QUESTIONS = [
     ],
   },
 ];
+
+export const QUOTES = {
+  INTROVERT: [
+    "You're rarely bored alone.",
+    "People empty you. You have to get away to refill.",
+    "You're uncomfortable with loud places and confrontations.",
+  ],
+  EXTROVERT: [
+    "You enjoy being at the center of attention.",
+    "You feel isolated by too much time spent alone.",
+    "You tends to act first before thinking.",
+  ],
+};
