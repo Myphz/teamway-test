@@ -1,6 +1,6 @@
 import { MongoMemoryServer } from "mongodb-memory-server";
 import { MongoClient } from "mongodb";
-import { QUESTIONS } from "./questions.js";
+import { QUESTIONS } from "./constants.js";
 
 export default async function connectDB() {
   const mongod = await MongoMemoryServer.create();
