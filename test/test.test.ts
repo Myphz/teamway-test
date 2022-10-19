@@ -1,5 +1,6 @@
 import { describe } from "node:test";
 import assert from "assert";
+import app from "../server/app";
 
 describe("Array", function () {
   describe("#indexOf()", function () {
