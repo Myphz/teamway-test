@@ -1,12 +1,14 @@
 import { describe } from "node:test";
-import assert from "assert";
+import { assert } from "chai";
 import app from "../server/app";
 import request from "supertest";
 
+const req = request(app);
+
 describe("Array", function () {
-  describe("#indexOf()", function () {
-    it("should return -1 when the value is not present", function () {
-      assert.equal([1, 2, 3].indexOf(4), -1);
+  describe("GET /questions", () => {
+    it("should return the questions", async () => {
+      const res = await req.get("/questions").expect(200);
     });
   });
 });
