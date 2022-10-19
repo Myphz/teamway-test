@@ -9,10 +9,15 @@
     <div class="h3 flex-column" style="gap: 0.25em">
       <span v-for="quote in quotes">{{ quote }}</span>
     </div>
+
+    <router-link to="/test" class="btn">
+      <Button>Restart the test</Button>
+    </router-link>
   </main>
 </template>
 
 <script lang="ts" setup>
+import Button from "@/components/Button.vue";
 import { useRouter } from "vue-router";
 
 const { result } = history.state;

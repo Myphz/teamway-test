@@ -18,14 +18,3 @@
 import Button from "@/components/Button.vue";
 import { RouterLink } from "vue-router";
 </script>
-
-<style lang="scss" scoped>
-.btn {
-  margin-top: 5rem;
-  width: 50%;
-
-  button {
-    width: 100%;
-  }
-}
-</style>

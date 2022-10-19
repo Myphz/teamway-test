@@ -68,3 +68,12 @@ main {
 .transition {
   transition: all 0.25s ease;
 }
+
+.btn {
+  margin-top: 5rem;
+  width: 50%;
+
+  button {
+    width: 100%;
+  }
+}
