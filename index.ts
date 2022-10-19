@@ -6,4 +6,8 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/questions", async (req, res, next) => {});
+app.get("/questions", async () => {
+  return await collection.find().toArray();
+});
+
+app.listen(3000);
