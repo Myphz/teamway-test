@@ -1,6 +1,7 @@
 import { describe } from "node:test";
 import assert from "assert";
 import app from "../server/app";
+import request from "supertest";
 
 describe("Array", function () {
   describe("#indexOf()", function () {
