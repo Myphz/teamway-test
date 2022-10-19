@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "npx tsc --project ./server/tsconfig.json && node ./server/index.js"
   },
   "dependencies": {
     "express": "^4.18.2",
